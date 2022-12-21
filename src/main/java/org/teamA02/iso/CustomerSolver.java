@@ -10,25 +10,32 @@ public class CustomerSolver {
 	       System.out.println(bnktype);
 	}
 	public static String comprobador(Costumer c) {
-        if(c.getAge() < 18 && c.isStudying && c.islivingwithparents){
+        if (c.getAge() >= 18 && c.getAge() < 25) {
+        	if(c.getAge() < 25 && c.isEnrolledinUNI() && !c.isLivingwithparents()){
+                return "Come on, you can";
+                }
+            if(c.getAge() >= 18 && c.isStartedworking() && !c.isLivingwithparents() && !c.isEnrolledinUNI()){
+                return "Jump out of the Nest";
+            }
+        }
+		if(c.getAge() < 18 && c.isStudying() && c.isLivingwithparents()){
         return "Comfort";
         }
-        else if(c.getAge() < 25 && c.isEnrolledinUNI() && !c.islivingwithparents){
+        if(c.getAge() < 25 && c.isEnrolledinUNI() && !c.isLivingwithparents()){
         return "Come on, you can";
         }
-        else if(c.getAge() >= 18 && c.startedworking && c.islivingwithparents){
+        if(c.getAge() >= 18 && c.getAge() <= 25 && c.isStartedworking() && c.isLivingwithparents()){
             return "Save Now While You Can";
         }
-        else if(c.getAge() >= 18 && c.startedworking && !c.islivingwithparents){
+        if(c.getAge() >= 18 && c.getAge() <= 25 && c.isStartedworking() && !c.isLivingwithparents()){
             return "Jump out of the Nest";
         }
-        else if(c.getAge() > 25 && c.isWorking && c.islivingwithparents){
+        if(c.getAge() > 25 && c.isWorking() && c.isLivingwithparents()){
             return "Become independent, it's about time";
         }
-        else if(c.getAge() > 25 && c.isWorking && !c.islivingwithparents){
+        if(c.getAge() > 25 && c.isWorking() && !c.isLivingwithparents()){
             return "Welcome to Adult Life";
         }
-
         return "NON-existing valid account";
     }
 

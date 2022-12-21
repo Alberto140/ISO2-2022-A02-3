@@ -7,37 +7,64 @@ import static org.junit.Assert.assertEquals;
 public class CustomerTest { 
 	//String name, int age, boolean isStudying, boolean islivingwithparents, boolean isEnrolledinUNI,
 	//boolean isWorking /boolean startedWorking
-	@Test
-	public void comprobador() {
-		Costumer c = new Costumer(" ", 25, true, false, false, true,true);
-		Costumer c1 = new Costumer(" ", 18, true, false, true, false,false);
-		Costumer c2 = new Costumer(" ", 25, false, false, true, true,true);
-		Costumer c3 = new Costumer(" ", 25, false, false, false, false,false);
-		Costumer c4 = new Costumer(" ", 25, false, false, false, true,true);
-		Costumer c5 = new Costumer(" ", 18, true, false, false, false,false);
-		Costumer c6 = new Costumer(" ", 18, true, false, true, true,true);
-		Costumer c7 = new Costumer(" ", 25, false, false, false, true,true);
-		Costumer c8 = new Costumer(" ", 18, false, false, true, false,false);
-		Costumer c9 = new Costumer(" ", 25, true, false, false, false,false);
-		Costumer c10 = new Costumer(" ", 18, false, false, true, true,true);
-		Costumer c11 = new Costumer(" ", 18, true, true, false, false,false);
-		Costumer c12 = new Costumer(" ", 25, true, true, true, true,true);
-		Costumer c13 = new Costumer(" ", 18, false, true, true, false,false);
-		
+
+	
+	@Test 
+	public void jump_out_of_the_Nest_case() {
+		Costumer c = new Costumer(" ", 19, true, false, false, false, true);
+		Costumer c1 = new Costumer(" ", 25, false, false, false, true, true);
 		assertEquals( CustomerSolver.comprobador(c),"Jump out of the Nest");
+		assertEquals( CustomerSolver.comprobador(c1),"Jump out of the Nest");
+	}
+	@Test 
+	public void comfort_case() {
+		Costumer c = new Costumer(" ", 16, true, true, false, false, true);
+		Costumer c1 = new Costumer(" ", 16, true, true, false, true, false);
+		assertEquals( CustomerSolver.comprobador(c),"Comfort");
+		assertEquals( CustomerSolver.comprobador(c1),"Comfort");
+	}
+	@Test 
+	public void come_on_you_can_case() {
+		Costumer c = new Costumer(" ", 18, true, false, true, true,true);
+		Costumer c1 = new Costumer(" ", 16, false, false, true, false,false);
+		assertEquals( CustomerSolver.comprobador(c),"Come on, you can");
 		assertEquals( CustomerSolver.comprobador(c1),"Come on, you can");
-		assertEquals( CustomerSolver.comprobador(c2),"Jump out of the Nest");
-		assertEquals( CustomerSolver.comprobador(c3),"NON-existing valid account");
-		assertEquals( CustomerSolver.comprobador(c4),"Jump out of the Nest");
-		assertEquals( CustomerSolver.comprobador(c5),"NON-existing valid account");
-		assertEquals( CustomerSolver.comprobador(c6),"Come on, you can");
-		assertEquals( CustomerSolver.comprobador(c7),"Jump out of the Nest");
-		assertEquals( CustomerSolver.comprobador(c8),"Come on, you can");
-		assertEquals( CustomerSolver.comprobador(c9),"NON-existing valid account");
-		assertEquals( CustomerSolver.comprobador(c10),"Come on, you can");
-		assertEquals( CustomerSolver.comprobador(c11),"NON-existing valid account");
-		assertEquals( CustomerSolver.comprobador(c12),"Save Now While You Can");
-		assertEquals( CustomerSolver.comprobador(c13),"NON-existing valid account");
+	}
+	@Test 
+	public void save_now_while_you_can_case() {
+		Costumer c = new Costumer(" ", 25, false, true, true, true,true);
+		Costumer c1 = new Costumer(" ", 25, true, true, false, false,true);
+		Costumer c2 = new Costumer(" ", 18, false, true, true, true,true);
+		assertEquals( CustomerSolver.comprobador(c),"Save Now While You Can");
+		assertEquals( CustomerSolver.comprobador(c1),"Save Now While You Can");
+		assertEquals( CustomerSolver.comprobador(c2),"Save Now While You Can");
+	}
+	@Test 
+	public void become_independent_case() {
+		Costumer c = new Costumer(" ", 26, true, true, false, true,true);
+		Costumer c1 = new Costumer(" ", 26, true, true, false, true,false);
+		Costumer c2 = new Costumer(" ", 26, false, true, false, true,true);
+		assertEquals( CustomerSolver.comprobador(c),"Become independent, it's about time");
+		assertEquals( CustomerSolver.comprobador(c1),"Become independent, it's about time");
+		assertEquals( CustomerSolver.comprobador(c2),"Become independent, it's about time");
+	}
+	@Test 
+	public void welcome_to_adult_life_case() {
+		Costumer c = new Costumer(" ", 26, false, false, false, true,true);
+		Costumer c1 = new Costumer(" ", 26, true, false, false, true,false);
+		Costumer c2 = new Costumer(" ", 26, true, false, false, true,true);
+		assertEquals( CustomerSolver.comprobador(c),"Welcome to Adult Life");
+		assertEquals( CustomerSolver.comprobador(c1),"Welcome to Adult Life");
+		assertEquals( CustomerSolver.comprobador(c2),"Welcome to Adult Life");
+	}
+	@Test 
+	public void non_existing_valid_account_case() {
+		Costumer c = new Costumer(" ", 15, false, false, false, true,true);
+		Costumer c1 = new Costumer(" ", 15, false, false, false, true,true);
+		Costumer c2 = new Costumer(" ", 15, false, false, false, true,true);
+		assertEquals( CustomerSolver.comprobador(c),"NON-existing valid account");
+		assertEquals( CustomerSolver.comprobador(c1),"NON-existing valid account");
+		assertEquals( CustomerSolver.comprobador(c2),"NON-existing valid account");
 	}
 
 }

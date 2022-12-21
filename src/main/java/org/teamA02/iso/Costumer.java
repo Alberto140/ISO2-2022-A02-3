@@ -70,7 +70,7 @@ public class Costumer {
 	/**
 	 * @return the islivingwithparents
 	 */
-	public boolean isIslivingwithparents() {
+	public boolean isLivingwithparents() {
 		return islivingwithparents;
 	}
 	/**
@@ -138,7 +138,7 @@ public class Costumer {
 		return "Costumer [name=" + name + ", age=" + age + ", isStudying=" + isStudying + ", islivingwithparents="
 				+ islivingwithparents + ", isEnrolledinUNI=" + isEnrolledinUNI + ", isWorking=" + isWorking
 				+ ", startedworking=" + startedworking + ", getName()=" + getName() + ", getAge()=" + getAge()
-				+ ", isStudying()=" + isStudying() + ", isIslivingwithparents()=" + isIslivingwithparents()
+				+ ", isStudying()=" + isStudying() + ", isIslivingwithparents()=" + isLivingwithparents()
 				+ ", isEnrolledinUNI()=" + isEnrolledinUNI() + ", isWorking()=" + isWorking() + ", isStartedworking()="
 				+ isStartedworking() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
 				+ super.toString() + "]";
