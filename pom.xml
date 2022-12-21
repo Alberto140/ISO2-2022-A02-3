@@ -6,10 +6,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.teamA02.iso</groupId>
-	<artifactId>triangles</artifactId>
+	<artifactId>ISO2-2022-A02-Testing-P3</artifactId>
 	<version>0.1.0</version>
 
-	<name>triangles</name>
+	<name>ISO2-2022-A02-Testing-P3</name>
 	<url>http://www.esi.uclm.es</url>
 
 	<properties>
@@ -135,6 +135,23 @@
 					<reportSet>
 						<reports>
 							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.19.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.2.0</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
 						</reports>
 					</reportSet>
 				</reportSets>
