@@ -1,15 +1,26 @@
 package org.teamA02.iso;
 
-import java.util.Scanner;
 
 public class CustomerSolver {
-	static Scanner sn = new Scanner(System.in);
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	       String bnktype = comprobador(scandata());
-	       System.out.println(bnktype);
+        data();
+	}
+	public static void data() {
+		int age = 18;
+		boolean isStudying = true;
+        boolean islivingwithparents = true;
+        boolean isEnrolledinUNI = true;
+        boolean isWorking = true;
+        boolean startedworking = true;
+			Costumer c = new Costumer(age, isStudying, islivingwithparents, isEnrolledinUNI, isWorking, startedworking);
+		    String bnktype = comprobador(c);
+		    System.out.println(bnktype);
+
 	}
 	public static String comprobador(Costumer c) {
+        if (c.getAge() < 0  || c.getAge() == 0 ) {
+            return "You cannot have a negative age";
+        }
         if (c.getAge() >= 18 && c.getAge() < 25) {
         	if(c.getAge() < 25 && c.isEnrolledinUNI() && !c.isLivingwithparents()){
                 return "Come on, you can";
@@ -39,39 +50,5 @@ public class CustomerSolver {
         return "NON-existing valid account";
     }
 
-    public static Costumer scandata(){
-        String name;
-        int age;
-        boolean isStudying;
-        boolean islivingwithparents;
-        boolean isEnrolledinUNI;
-        boolean isWorking;
-        boolean startedworking;
-
-        System.out.println("Itroduce name of customer :");
-        name = sn.nextLine();
-        System.out.println("Itroduce age of customer :");
-        age = sn.nextInt();
-
-        System.out.println("Itroduce if the customer is Studying (TRUE,FALSE):");
-        //try {
-            isStudying = sn.nextBoolean();
-        //}
-        //catch(Exception e) {
-            //  Block of code to handle errors
-        //}
-        System.out.println("Itroduce if the customer is living with his parents (TRUE,FALSE):");
-        islivingwithparents = sn.nextBoolean();
-        System.out.println("Itroduce if the customer is enrolled in the UNIVERSITY (TRUE,FALSE):");
-        isEnrolledinUNI = sn.nextBoolean();
-        System.out.println("Itroduce if the customer is Working (TRUE,FALSE):");
-        isWorking = sn.nextBoolean();
-        System.out.println("Itroduce if the customer has started Working (TRUE,FALSE):");
-        startedworking = sn.nextBoolean();
-
-        Costumer c = new Costumer(name, age,isStudying,islivingwithparents,isEnrolledinUNI,isWorking,startedworking);
-        return c;
-
-    }
 
 }
